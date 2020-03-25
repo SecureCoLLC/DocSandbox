@@ -29,7 +29,7 @@ set -euo pipefail
 #     npm install moxygen -g
 # fi
 
-rm -rf docs/cpp
+rm -rf doxygen/cpp
 doxygen .doxygen-config cpp
 
 # rm -rf doxygen/md
