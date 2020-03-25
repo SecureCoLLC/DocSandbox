@@ -30,7 +30,7 @@ author = 'SecureCo, LLC.'
 # ones.
 extensions = ['sphinx.ext.imgmath', 'sphinx.ext.todo', 'breathe' ]
 
-breathe_projects = { "sandbox": "doxygen/xml/" }
+breathe_projects = { "sandbox": "/home/docs/checkouts/readthedocs.org/user_builds/secureco-llc-docsandbox/doxygen/xml/" }
 breathe_default_project = "sandbox"
 
 # Add any paths that contain templates here, relative to this directory.
@@ -53,14 +53,12 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# master_doc = '../doxygen/index'
-
 class Doxygen:
     def run(self, ):
         """Run the doxygen make command in the designated folder"""
 
         try:
-            retcode = subprocess.call('pwd && cd .. && scripts/doxygen.sh', shell=True)
+            retcode = subprocess.call('pwd && scripts/doxygen.sh', shell=True)
             if retcode < 0:
                 sys.stderr.write("doxygen terminated by signal %s" % (-retcode))
         except OSError as e:
