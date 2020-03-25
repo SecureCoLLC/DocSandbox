@@ -40,6 +40,8 @@ public:
         return height_;
     }
 
+    /// Returns the depth value
+    /// @returns depth
     int32_t depth()
     {
         return depth_;
