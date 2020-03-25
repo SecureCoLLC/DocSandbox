@@ -17,7 +17,7 @@ import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 # make source
-call(['python', './make_source.py', '../cpp', './'])
+subprocess.call(['python', './make_source.py', '../cpp', './'])
 
 # -- Project information -----------------------------------------------------
 
