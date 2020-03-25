@@ -1,6 +1,9 @@
-package sandbox
+package main
 
-import "fmt"
+import (
+	"fmt"
+	"sandbox"
+)
 
 func assert(cond bool) {
 	if !cond {
@@ -9,8 +12,8 @@ func assert(cond bool) {
 }
 
 func main() {
-	sq := NewSquare(3, 2)
-	cb := NewCube(5, 4, 3)
+	sq := sandbox.NewSquare(3, 2)
+	cb := sandbox.NewCube(5, 4, 3)
 
 	fmt.Printf("SQ = %v\n", sq.Area())
 	fmt.Printf("CB = %v\n", cb.Area())
