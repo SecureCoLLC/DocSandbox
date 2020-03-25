@@ -29,8 +29,12 @@ set -euo pipefail
 #     npm install moxygen -g
 # fi
 
-rm -rf doxygen/cpp
-doxygen .doxygen-config cpp
+doxygen .. doxygenindex::
+doxygen .. doxygenfunction::
+doxygen .. doxygenstruct::
+doxygen .. doxygenenum::
+doxygen .. doxygentypedef::
+doxygen .. doxygenclass::
 
 # rm -rf doxygen/md
 # mkdir -p doxygen/md
