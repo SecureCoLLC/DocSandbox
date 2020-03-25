@@ -25,7 +25,7 @@ class Doxygen:
         read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 
         if read_the_docs_build:
-            run_doxygen()
+            self.run()
 
 def setup(app):
 
