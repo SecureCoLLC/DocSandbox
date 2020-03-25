@@ -3,7 +3,7 @@
 import os
 import sys
 
-CAT_NAME = "Modules"
+CAT_NAME = "sandbox"
 INDEX_TEMP = "./_index.rst"
 
 def generateIndex(inDir, outDir):
@@ -39,6 +39,13 @@ def generateRST(outDir, moduleName, listModules, listFiles) :
         outFile.write("   :project: myproject\n\n")
 
     # toctree
+    outFile.write(".. doxygenindex::\n")
+    outFile.write(".. doxygenfunction::\n")
+    outFile.write(".. doxygenstruct::\n")
+    outFile.write(".. doxygenenum::\n")
+    outFile.write(".. doxygentypedef::\n")
+    outFile.write(".. doxygenclass::\n")
+
     outFile.write(".. toctree::\n")
     outFile.write("   :caption: %s:\n" % CAT_NAME)
     outFile.write("   :titlesonly:\n")
@@ -84,7 +91,7 @@ Alphabet
 .. doxygenfile:: compound_alphabet.hpp
    :project: myproject
 .. toctree::
-   :caption: Modules:
+   :caption: sandbox:
    :titlesonly:
    :maxdepth: 1
    :hidden:
