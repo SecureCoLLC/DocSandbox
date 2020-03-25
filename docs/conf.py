@@ -5,4 +5,4 @@ read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 if read_the_docs_build:
     subprocess.call('cd .. && scripts/doxygen.sh', shell=True)
 
-master_doc = 'index'
+master_doc = '../doxygen/index'
