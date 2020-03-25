@@ -22,3 +22,5 @@ popd
 echo "### Running ShapesGo"
 ./bin/ShapesGo
 
+echo "### Generate C++ documentation"
+./scripts/doxygen.sh
