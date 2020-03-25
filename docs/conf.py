@@ -1,7 +1,7 @@
 import subprocess, os, sys
 
-sys.path.append( "ext/breathe/")
-extensions = ['sphinx.ext.pngmath', 'sphinx.ext.todo', 'breathe' ]
+# sys.path.append( "ext/breathe/")
+extensions = ['sphinx.ext.imgmath', 'sphinx.ext.todo', 'breathe' ]
 breathe_projects = { "sandbox": "doxygen/xml/" }
 breathe_default_project = "sandbox"
 
