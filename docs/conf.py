@@ -4,7 +4,9 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-import subprocess, os, sys
+import os
+import subprocess
+import sys
 
 # -- Path setup --------------------------------------------------------------
 
@@ -14,6 +16,8 @@ import subprocess, os, sys
 #
 # sys.path.insert(0, os.path.abspath('.'))
 
+# make source
+call(['python', './make_source.py', '../cpp', './'])
 
 # -- Project information -----------------------------------------------------
 
@@ -35,6 +39,11 @@ breathe_default_project = "sandbox"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
+
+# The suffix(es) of source filenames.
+# You can specify multiple suffix as a list of string:
+#
+source_suffix = ['.rst', '.md']
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

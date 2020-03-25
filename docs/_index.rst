@@ -8,5 +8,3 @@ Readthedocs.com sample documentation setup
    :maxdepth: 1
    :hidden:
 
-   :caption: Modules:
-
