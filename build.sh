@@ -24,3 +24,7 @@ echo "### Running ShapesGo"
 
 echo "### Generate C++ documentation"
 ./scripts/doxygen.sh
+
+# echo "### Generate Go documentation"
+
+git add docs
