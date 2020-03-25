@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"sandbox"
+
+	"github.com/SecureCoLLC/DocSandbox/sandbox"
 )
 
 func assert(cond bool) {
