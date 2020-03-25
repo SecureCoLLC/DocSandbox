@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.15">
+  <compound refid="classsandbox_1_1_cube" kind="class"><name>sandbox::Cube</name>
+    <member refid="classsandbox_1_1_cube_1a723a8e75a78de2947d6952d67b9ccb11" kind="variable"><name>width_</name></member>
+    <member refid="classsandbox_1_1_cube_1a65408625e9c8468ecbcaf9ef3ae611cd" kind="variable"><name>height_</name></member>
+    <member refid="classsandbox_1_1_cube_1a521b823457e5caa3946b16c8fdd60a41" kind="variable"><name>depth_</name></member>
+    <member refid="classsandbox_1_1_cube_1ae1f0c16a3e94b652614ada925b24e611" kind="function"><name>Cube</name></member>
+    <member refid="classsandbox_1_1_cube_1ab19e922d0fa9431220eca845ae76e707" kind="function"><name>~Cube</name></member>
+    <member refid="classsandbox_1_1_cube_1aa485ef5e5e082183f1d9b8565365dfb5" kind="function"><name>width</name></member>
+    <member refid="classsandbox_1_1_cube_1a4b82fdc43ad08573526420833a90a4d4" kind="function"><name>height</name></member>
+    <member refid="classsandbox_1_1_cube_1aeb27ca34752f1cf66d4d8b38a4874f7c" kind="function"><name>depth</name></member>
+    <member refid="classsandbox_1_1_cube_1a882672645dbe516f24f8c363730fdef0" kind="function"><name>area</name></member>
+  </compound>
+  <compound refid="classsandbox_1_1_square" kind="class"><name>sandbox::Square</name>
+    <member refid="classsandbox_1_1_square_1acb67cd39ccf19987b47725cc2b8b07f0" kind="variable"><name>width_</name></member>
+    <member refid="classsandbox_1_1_square_1ac001e936549f77737dd8bc18cd836439" kind="variable"><name>height_</name></member>
+    <member refid="classsandbox_1_1_square_1a05c6bb6c23749ae4616a77ed70210568" kind="function"><name>Square</name></member>
+    <member refid="classsandbox_1_1_square_1aae7383a5389f56686f955b85c0b5d330" kind="function"><name>~Square</name></member>
+    <member refid="classsandbox_1_1_square_1a5f344e42d3d545919ca567101c49a027" kind="function"><name>width</name></member>
+    <member refid="classsandbox_1_1_square_1a5053820765994fa8008415ebbad9a76e" kind="function"><name>height</name></member>
+    <member refid="classsandbox_1_1_square_1a57844e085e500de30be917e1876cb4e6" kind="function"><name>area</name></member>
+  </compound>
+  <compound refid="namespacesandbox" kind="namespace"><name>sandbox</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="_cube_8cpp" kind="file"><name>Cube.cpp</name>
+  </compound>
+  <compound refid="_cube_8hpp" kind="file"><name>Cube.hpp</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_square_8cpp" kind="file"><name>Square.cpp</name>
+  </compound>
+  <compound refid="_square_8hpp" kind="file"><name>Square.hpp</name>
+  </compound>
+  <compound refid="dir_df511e5bd85cec96854b39d5e1c27aa8" kind="dir"><name>cpp</name>
+  </compound>
+</doxygenindex>
