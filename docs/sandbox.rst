@@ -2,23 +2,23 @@ Sandbox
 =======
 
 .. doxygenfile:: sandbox/Cube.cpp
-   :project: myproject
+   :project: sandbox
 
 .. doxygenfile:: sandbox/Cube.hpp
-   :project: myproject
+   :project: sandbox
 
 .. doxygenfile:: sandbox/Square.cpp
-   :project: myproject
+   :project: sandbox
 
 .. doxygenfile:: sandbox/Square.hpp
-   :project: myproject
+   :project: sandbox
 
 .. doxygenfile:: sandbox/main.cpp
-   :project: myproject
+   :project: sandbox
 
 .. toctree::
    :caption: sandbox:
    :titlesonly:
-   :maxdepth: 1
+   :maxdepth: 50
    :hidden:
 

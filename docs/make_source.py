@@ -9,20 +9,19 @@ INDEX_TEMP = "./_index.rst"
 def generateIndex(inDir, outDir):
     listModules = []
     for fileName in os.listdir(inDir) :
+        print(fileName)
         if os.path.isdir(inDir + fileName) == True:
             listModules.append(fileName)  
     listModules = sorted(listModules)
 
     # generate index.rst
-    inFile = open(INDEX_TEMP, "r")
-    outFile = open(outDir + "/index.rst", "w")
-    for line in inFile :
-        outFile.write(line)
-    inFile.close()
-    outFile.write("   :caption: %s:\n\n" % CAT_NAME)
-    for moduleName in listModules :
-        outFile.write("   %s\n" % (moduleName))
-    outFile.close()
+    with open(INDEX_TEMP, "r") as inFile:
+        with open(outDir + "/index.rst", "w") as outFile:
+            for line in inFile :
+                outFile.write(line)
+            outFile.write("   :caption: %s:\n\n" % CAT_NAME)
+            for moduleName in listModules :
+                outFile.write("   %s\n" % (moduleName))
 
 def generateRST(outDir, moduleName, listModules, listFiles) :
     if len(listModules) > 0 and os.path.isdir(outDir) == False:
@@ -36,7 +35,7 @@ def generateRST(outDir, moduleName, listModules, listFiles) :
     # doxygenfile
     for fileName in listFiles :
         outFile.write(".. doxygenfile:: %s/%s\n" % (outDir[3:], fileName))
-        outFile.write("   :project: myproject\n\n")
+        outFile.write("   :project: sandbox\n\n")
 
     # outFile.write(".. doxygenindex::\n")
     # outFile.write(".. doxygenfunction::\n")
@@ -49,7 +48,7 @@ def generateRST(outDir, moduleName, listModules, listFiles) :
     outFile.write(".. toctree::\n")
     outFile.write("   :caption: %s:\n" % CAT_NAME)
     outFile.write("   :titlesonly:\n")
-    outFile.write("   :maxdepth: 1\n")
+    outFile.write("   :maxdepth: 50\n")
     outFile.write("   :hidden:\n\n")
     for childModuleName in listModules :
        outFile.write("   %s/%s\n" % (moduleName, childModuleName) )
@@ -109,6 +108,6 @@ Alphabet
 inDir = sys.argv[1]
 outDir = sys.argv[2]
 
-generateIndex(inDir, outDir)
 generateRSTs(inDir, outDir, True)
+generateIndex(inDir, outDir)
 
