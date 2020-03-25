@@ -17,7 +17,7 @@ import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 # make source
-subprocess.call(['python', './make_source.py', '../cpp', './'])
+subprocess.call(['python', './make_source.py', '../cpp', '.'])
 
 # -- Project information -----------------------------------------------------
 
@@ -48,7 +48,7 @@ source_suffix = ['.rst', '.md']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = [ '_index.rst' ]
 
 # -- Options for HTML output -------------------------------------------------
 
