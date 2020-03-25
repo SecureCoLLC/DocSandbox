@@ -1,11 +1,18 @@
 import subprocess, os, sys
 
+sys.path.append( "ext/breathe/")
+extensions = ['sphinx.ext.pngmath', 'sphinx.ext.todo', 'breathe' ]
+breathe_projects = { "sandbox": "doxygen/xml/" }
+breathe_default_project = "sandbox"
+
+# master_doc = '../doxygen/index'
+
 class Doxygen:
     def run(self, ):
         """Run the doxygen make command in the designated folder"""
 
         try:
-            retcode = subprocess.call('cd .. && scripts/doxygen.sh', shell=True)
+            retcode = subprocess.call('pwd && cd .. && scripts/doxygen.sh', shell=True)
             if retcode < 0:
                 sys.stderr.write("doxygen terminated by signal %s" % (-retcode))
         except OSError as e:
@@ -21,8 +28,8 @@ class Doxygen:
             run_doxygen()
 
 def setup(app):
+
     doxygen = Doxygen()
-    master_doc = '../doxygen/index'
 
     # Add hook for building doxygen xml when needed
     app.connect("builder-inited", doxygen.generate)
