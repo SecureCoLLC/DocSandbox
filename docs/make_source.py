@@ -38,14 +38,14 @@ def generateRST(outDir, moduleName, listModules, listFiles) :
         outFile.write(".. doxygenfile:: %s/%s\n" % (outDir[3:], fileName))
         outFile.write("   :project: myproject\n\n")
 
-    # toctree
-    outFile.write(".. doxygenindex::\n")
-    outFile.write(".. doxygenfunction::\n")
-    outFile.write(".. doxygenstruct::\n")
-    outFile.write(".. doxygenenum::\n")
-    outFile.write(".. doxygentypedef::\n")
-    outFile.write(".. doxygenclass::\n")
+    # outFile.write(".. doxygenindex::\n")
+    # outFile.write(".. doxygenfunction::\n")
+    # outFile.write(".. doxygenstruct::\n")
+    # outFile.write(".. doxygenenum::\n")
+    # outFile.write(".. doxygentypedef::\n")
+    # outFile.write(".. doxygenclass::\n")
 
+    # toctree
     outFile.write(".. toctree::\n")
     outFile.write("   :caption: %s:\n" % CAT_NAME)
     outFile.write("   :titlesonly:\n")
