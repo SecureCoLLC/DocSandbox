@@ -30,13 +30,13 @@ author = 'SecureCo, LLC.'
 # Install dev version of sphinxcontrib_golangdomain if needed
 if not os.path.isdir('/tmp/sphinxcontrib-golangdomain'):
     cmd = 'git clone https://github.com/SecureCoLLC/sphinxcontrib-golangdomain ' + \
-        '/tmp/sphinxcontrib-golangdomain ' + \
-        '&& cd /tmp/sphinxcontrib-golangdomain ' + \
+        'sphinxcontrib-golangdomain ' + \
+        '&& cd sphinxcontrib-golangdomain ' + \
         '&& python setup.py build ' + \
         '&& python setup.py install'
 
     subprocess.call(cmd, shell=True)
-shutil.rmtree('/tmp/sphinxcontrib-golangdomain')
+shutil.rmtree('sphinxcontrib-golangdomain')
 
 # -- General configuration ---------------------------------------------------
 
