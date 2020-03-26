@@ -6,9 +6,9 @@ mkdir -p bin/cpp
 mkdir -p bin
 
 echo "### Building ShapesCpp"
-clang++ -std=c++17 -o bin/cpp/Square.o -c cpp/Square.cpp
-clang++ -std=c++17 -o bin/cpp/Cube.o -c cpp/Cube.cpp
-clang++ -std=c++17 -o bin/cpp/main.o -c cpp/main.cpp
+clang++ -std=c++17 -o bin/cpp/Square.o -c cpp/sandbox/Square.cpp
+clang++ -std=c++17 -o bin/cpp/Cube.o -c cpp/sandbox/Cube.cpp
+clang++ -std=c++17 -o bin/cpp/main.o -c cpp/sandbox/main.cpp
 clang++ -std=c++17 -o bin/ShapesCpp bin/cpp/main.o bin/cpp/Cube.o bin/cpp/Square.o
 
 echo "### Running ShapesCpp"
@@ -22,9 +22,13 @@ popd
 echo "### Running ShapesGo"
 ./bin/ShapesGo
 
-echo "### Generate C++ documentation"
-./scripts/doxygen.sh
+echo "### Generate and open documentation"
+#./scripts/doxygen.sh
 
-# echo "### Generate Go documentation"
+pushd docs
+rm -rf sandbox sandbox.rst build html
+make html
+open build/html/index.html
+popd
 
-git add docs
+# git add docs
