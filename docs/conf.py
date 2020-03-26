@@ -34,8 +34,8 @@ if os.path.isdir('/tmp/sphinxcontrib-golangdomain'):
 golangdomain_cmd = 'git clone https://github.com/SecureCoLLC/sphinxcontrib-golangdomain ' + \
     '/tmp/sphinxcontrib-golangdomain ' + \
     '&& cd /tmp/sphinxcontrib-golangdomain ' + \
-    '&& python setup.py build ' + \
-    '&& python setup.py install'
+    '&& python3.7 setup.py build ' + \
+    '&& python3.7 setup.py install'
 
 subprocess.call(golangdomain_cmd, shell=True)
 
