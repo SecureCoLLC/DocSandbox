@@ -4,6 +4,7 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import glob
 import os
 import subprocess
 import sys
@@ -25,6 +26,16 @@ project = 'sandbox'
 copyright = '2020, SecureCo, LLC.'
 author = 'SecureCo, LLC.'
 
+# Install dev version of sphinxcontrib_golangdomain if needed
+    if not os.path.isdir('/tmp/sphinxcontrib-golangdomain'):
+        subprocess.call('git clone https://github.com/SecureCoLLC/sphinxcontrib-golangdomain ' +
+            '/tmp/sphinxcontrib-golangdomain ' +
+            '&& cd /tmp/sphinxcontrib-golangdomain ' +
+            '&& python setup.py build ' +
+            '&& python setup.py install', shell=True
+        )
+        os.remove('/tmp/sphinxcontrib-golangdomain')
+
 # -- General configuration ---------------------------------------------------
 
 # sys.path.append( "ext/breathe/")
@@ -32,7 +43,47 @@ author = 'SecureCo, LLC.'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.imgmath', 'sphinx.ext.todo', 'breathe' ]
+extensions = [
+    'sphinx.ext.imgmath',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.todo',
+    'breathe',
+    'autoapi.extension',
+    'sphinx.ext.intersphinx',
+    'sphinxcontrib.golangdomain',
+]
+
+autoapi_type = 'go'
+
+autoapi_dirs = []
+for folder in glob.iglob('../go/**', recursive=True):
+    if os.path.isdir(folder):
+        print('Folders = {}'.format(folder))
+        autoapi_dirs.append(folder)
+
+autoapi_generate_api_docs=True
+# autoapi_template_dir='_templates/autoapi'
+
+autoapi_options = [
+    'members',
+    'inherited-members',
+    'undoc-members',
+    'private-members',
+    'special-members',
+    'show-inheritance',
+    'show-inheritance-diagram',
+    'show-module-summary',
+]
+
+autoapi_modules = {
+   'sandbox': {
+        'prune': False,
+        'override': True,
+        'output': 'auto',
+   }
+}
+
+autoapi_keep_files=True
 
 breathe_projects = { "sandbox": "doxygen/xml/" }
 breathe_default_project = "sandbox"
