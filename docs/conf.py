@@ -28,19 +28,20 @@ copyright = '2020, SecureCo, LLC.'
 author = 'SecureCo, LLC.'
 
 # Install dev version of sphinxcontrib_golangdomain if needed
-if not os.path.isdir('/tmp/sphinxcontrib-golangdomain'):
-    cmd = 'git clone https://github.com/SecureCoLLC/sphinxcontrib-golangdomain ' + \
-        'sphinxcontrib-golangdomain ' + \
-        '&& cd sphinxcontrib-golangdomain ' + \
-        '&& python setup.py build ' + \
-        '&& python setup.py install'
+if os.path.isdir('/tmp/sphinxcontrib-golangdomain'):
+    shutil.rmtree('/tmp/sphinxcontrib-golangdomain')
 
-    subprocess.call(cmd, shell=True)
-shutil.rmtree('sphinxcontrib-golangdomain')
+golangdomain_cmd = 'git clone https://github.com/SecureCoLLC/sphinxcontrib-golangdomain ' + \
+    '/tmp/sphinxcontrib-golangdomain ' + \
+    '&& cd /tmp/sphinxcontrib-golangdomain ' + \
+    '&& python setup.py build ' + \
+    '&& python setup.py install'
+
+subprocess.call(golangdomain_cmd, shell=True)
 
 # -- General configuration ---------------------------------------------------
 
-# sys.path.append( "ext/breathe/")
+sys.path.append("/tmp/sphinxcontrib-golangdomain")
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
