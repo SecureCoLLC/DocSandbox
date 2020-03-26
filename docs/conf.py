@@ -6,6 +6,7 @@
 
 import glob
 import os
+import shutil
 import subprocess
 import sys
 
@@ -27,14 +28,15 @@ copyright = '2020, SecureCo, LLC.'
 author = 'SecureCo, LLC.'
 
 # Install dev version of sphinxcontrib_golangdomain if needed
-    if not os.path.isdir('/tmp/sphinxcontrib-golangdomain'):
-        subprocess.call('git clone https://github.com/SecureCoLLC/sphinxcontrib-golangdomain ' +
-            '/tmp/sphinxcontrib-golangdomain ' +
-            '&& cd /tmp/sphinxcontrib-golangdomain ' +
-            '&& python setup.py build ' +
-            '&& python setup.py install', shell=True
-        )
-        os.remove('/tmp/sphinxcontrib-golangdomain')
+if not os.path.isdir('/tmp/sphinxcontrib-golangdomain'):
+    cmd = 'git clone https://github.com/SecureCoLLC/sphinxcontrib-golangdomain ' + \
+        '/tmp/sphinxcontrib-golangdomain ' + \
+        '&& cd /tmp/sphinxcontrib-golangdomain ' + \
+        '&& python setup.py build ' + \
+        '&& python setup.py install'
+
+    subprocess.call(cmd, shell=True)
+shutil.rmtree('/tmp/sphinxcontrib-golangdomain')
 
 # -- General configuration ---------------------------------------------------
 
