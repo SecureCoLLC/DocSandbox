@@ -6,12 +6,14 @@ import (
 	"github.com/SecureCoLLC/DocSandbox/sandbox"
 )
 
+// assert is a method to confirm that a condition is true and panics otherwise
 func assert(cond bool) {
 	if !cond {
 		panic("Assertion failed")
 	}
 }
 
+// main is the entry point of go function
 func main() {
 	sq := sandbox.NewSquare(3, 2)
 	cb := sandbox.NewCube(5, 4, 3)
