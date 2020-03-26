@@ -116,7 +116,7 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-class Doxygen:
+class DoxygenRunner:
     def run(self, ):
         """Run the doxygen make command in the designated folder"""
 
@@ -138,7 +138,7 @@ class Doxygen:
 
 def setup(app):
 
-    doxygen = Doxygen()
+    doxygen = DoxygenRunner()
 
     # Add hook for building doxygen xml when needed
     app.connect("builder-inited", doxygen.generate)
